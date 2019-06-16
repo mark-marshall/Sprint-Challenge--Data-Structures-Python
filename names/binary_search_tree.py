@@ -43,7 +43,7 @@ class BinarySearchTree:
       else:
         # otherwise, return False
         return False
-  
+
   def get_max(self):
     # check to see if we're already at the max value
     if not self.right:

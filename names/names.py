@@ -19,14 +19,7 @@ f.close()
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
 
-# First pass solution using Python in-built "in" function (from C so much faster)
-# Runtime = 1.0 seconds
-# duplicates = []
-# for name_1 in names_1:
-#     if name_1 in names_2:
-#         duplicates.append(name_1)
-
-# Second pass solution using binary search tree data structure
+# Solution using binary search tree data structure
 #  Runtime = 0.1 seconds
 duplicates = []
 # Initialise the search tree with letter m to give a better chance of an even tree
@@ -38,6 +31,13 @@ for name_2 in names_2:
 for name_1 in names_1:
     if comparison_tree.contains(name_1):
         duplicates.append(name_1)
+
+# STRETCH solution using Python in-built "in" function (from C so much faster)
+# Runtime = 1.0 seconds
+# duplicates = []
+# for name_1 in names_1:
+#     if name_1 in names_2:
+#         duplicates.append(name_1)
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")

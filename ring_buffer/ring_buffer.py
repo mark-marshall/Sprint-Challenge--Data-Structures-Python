@@ -8,7 +8,7 @@ class RingBuffer:
     # check if the storage contains any Nones and replace first available None
     if None in self.storage:
       # get index of first None
-      append_index = self.storge.index(None)
+      append_index = self.storage.index(None)
       # add new item at the append_index
       self.storage[append_index] = item
     # if there are no Nones, find the oldest item and replace it

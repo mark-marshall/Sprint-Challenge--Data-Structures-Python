@@ -25,4 +25,5 @@ class RingBuffer:
       self.storage[append_index] = item
     
   def get(self):
-    pass
+    # return the storage without any None items
+    return [item for item in self.storage if item != None]

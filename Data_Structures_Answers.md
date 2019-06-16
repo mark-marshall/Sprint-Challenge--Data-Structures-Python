@@ -19,7 +19,7 @@ O(n^2) - nested for-loops running simple O(1) comparison check
 O(n) - up to O(n) if every name is a duplicate and has to be stored in the duplicates list
 
 7. What is the runtime complexity of your optimized code in `names.py`?
-O(n(log(n))) - O(n) of loop through names_1 multiplied by O(log(n)) for search in the BST if we assume it is balanced
+O(n(log(n))) - driven by the runtime complexity of the in-built python sort function
 
 8. What is the space complexity of your optimized code in `names.py`?
 O(n) - up to O(n) if every name is a duplicate and has to be stored in the duplicates list

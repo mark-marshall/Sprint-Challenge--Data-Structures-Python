@@ -1,4 +1,5 @@
 import time
+from binary_search_tree import BinarySearchTree
 
 start_time = time.time()
 
@@ -20,10 +21,14 @@ f.close()
 
 # First pass solution using Python in-built "in" function (from C so much faster)
 # Runtime = 1.0 seconds
-duplicates = []
-for name_1 in names_1:
-    if name_1 in names_2:
-        duplicates.append(name_1)
+# duplicates = []
+# for name_1 in names_1:
+#     if name_1 in names_2:
+#         duplicates.append(name_1)
+
+# Second pass solution using binary search tree data structure
+#  Runtime = 
+
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")

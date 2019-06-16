@@ -41,31 +41,36 @@ f.close()
 
 # STRETCH solution merging lists and sorting
 # Runtime = 0.03 seconds
-def get_duplicates(list):
-        duplicates = []
-        sorted_list = sorted(list)
-        for i in range(0, len(sorted_list) - 1):
-                if sorted_list[i] == sorted_list[i+1]:
-                        duplicates.append(sorted_list[i])
-        return duplicates
-
+# return a deduplicated list when given a list and a list of the duplicates
 def remove_duplicates(list, duplicates):
         deduplicated_list = []
         for name in list:
                 if name not in duplicates:
+                        # only append names that are not in duplicates list
                        deduplicated_list.append(name) 
         return deduplicated_list
 
-names_1_dupe = get_duplicates(names_1)
-name_1_deduped = remove_duplicates(names_1, names_1_dupe)
+# find duplicates and return answer from remove_duplicated function
+def deduplicated_list(list):
+        duplicates = []
+        # sort the list for adjacent comparisons
+        sorted_list = sorted(list)
+        for i in range(0, len(sorted_list) - 1):
+                if sorted_list[i] == sorted_list[i+1]:
+                        # append names where adjacent names in the list are the same
+                        duplicates.append(sorted_list[i])
+        return remove_duplicates(list, duplicates)
 
-names_2_dupe = get_duplicates(names_2)
-name_2_deduped = remove_duplicates(names_2, names_2_dupe)
+# invoke the deduplication functions on both names_1 and names_2
+names_1_deduplicated = deduplicated_list(names_1)
+names_2_deduplicated = deduplicated_list(names_2)
 
 duplicates = []
-merged_names = sorted(name_1_deduped + name_2_deduped)
+# merge and sort the two deduplicated lists
+merged_names = sorted(names_1_deduplicated + names_2_deduplicated)
 for i in range(0, len(merged_names) - 1):
-        if merged_names[i] == merged_names[i+1] and merged_names[i]:
+        # append names where adjacent names in the list are the same
+        if merged_names[i] == merged_names[i+1]:
                 duplicates.append(merged_names[i+1])
 
 end_time = time.time()
